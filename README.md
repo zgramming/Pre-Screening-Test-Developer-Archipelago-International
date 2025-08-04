@@ -118,7 +118,7 @@ const delay = (delay) => {
   return new Promise((resolve) => resolve(setTimeout(resolve, delay)));
 };
 
-delay(3000).then((val) => console.log("test"));
+delay(3000).then((val) => alert('runs after 3 seconds'));
 ```
 
 **3. Level 2.5**
