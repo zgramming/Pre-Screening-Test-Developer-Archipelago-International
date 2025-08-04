@@ -1,20 +1,23 @@
 # Pre Screening Test Developer
 
-## Basic Question 
+## Basic Question
 
-At least we should have 3 table to accomodire this scenario Roles,Users and Photos. Each table have these structure : 
+At least we should have 3 table to accomodire this scenario Roles,Users and Photos. Each table have these structure :
 
 **Role**
-- id [varchar] (PK AI) 
+
+- id [varchar] (PK AI)
 - name [varchar]
 - code [varchar] (unique)
 
 **User**
+
 - id [int] (PK AI)
 - role_id [int] (FK)
 - name [varchar]
 
 **Photos**
+
 - id [UUID] (PK)
 - name
 - status [enum] (pending, approve, reject)
@@ -24,7 +27,7 @@ At least we should have 3 table to accomodire this scenario Roles,Users and Phot
 - reviewed_by
 - reviewed_at
 
-With those structure we have, we already accomodire user can upload multiple photo and reviewed. So for the logic, this is pseudo code : 
+With those structure we have, we already accomodire user can upload multiple photo and reviewed. So for the logic, this is pseudo code :
 
 1. User choose photos to be upload to server
 2. Our backend will validate the photos to make sure it passed our validation like mimetype and size
@@ -35,19 +38,22 @@ With those structure we have, we already accomodire user can upload multiple pho
 ## Database Question
 
 **1.**
+
 ```sql
 SELECT COUNT(*) as Total FROM Customers where Country = 'Germany';
 ```
 
 **2.**
+
 ```sql
-SELECT COUNT(CustomerID), c.Country as Total FROM Customers c 
+SELECT COUNT(CustomerID), c.Country as Total FROM Customers c
 group by c.Country
 having count(c.Country) > 4
 order by count(c.Country) desc;
 ```
 
 **3.**
+
 ```sql
 select c.CustomerName, count(o.OrderID) as OrderCount, FORMAT(MIN(o.OrderDate), 'YYYY-mm-dd') as FirstOrder, FORMAT(MAX(o.OrderDate),'YYYY-mm-dd') as LastOrder from Customers as c
 INNER JOIN Orders as o on (o.CustomerID = c.CustomerID)
@@ -59,6 +65,7 @@ order by MAX(o.OrderDate) desc
 ## Javascript/Typescript Questions
 
 **1. Level 1**
+
 ```javascript
 const titleCase = (value) => {
   const splits = value.split(" ").map((x) => x.toLowerCase());
@@ -113,15 +120,17 @@ for (const [k, v] of countWord(
 ```
 
 **2. Level 2**
+
 ```javascript
 const delay = (delay) => {
-  return new Promise((resolve) => resolve(setTimeout(resolve, delay)));
+  return new Promise((resolve) => setTimeout(resolve, delay));
 };
 
-delay(3000).then((val) => alert('runs after 3 seconds'));
+delay(3000).then((val) => alert("runs after 3 seconds"));
 ```
 
 **3. Level 2.5**
+
 ```javascript
 async function fetchData(url) {
   return new Promise((resolve, reject) => {
@@ -152,7 +161,7 @@ execute();
 This is common security website vulnerabilities :
 
 **1. CSRF**  
-To handling this error, in .NET  we can add [ValidateAntiForgeryToken] in controller. We can use method JWT Authentication too if needed
+To handling this error, in .NET we can add [ValidateAntiForgeryToken] in controller. We can use method JWT Authentication too if needed
 
 **2. SQL Injection**  
 To handling this error, in .NET we can use built in ORM EntityFramework. In EntityFramework the default already protected SQL Injection
@@ -225,10 +234,10 @@ public class Solutions
 3. VSCode / Jetbrains => 4
 4. Linux => 4
 5. AWS
-    - EC2 => 2
-    - Lambda => 2
-    - RDS => 2
-    - Cloudwatch => 2
-    - S3 => 4
+   - EC2 => 2
+   - Lambda => 2
+   - RDS => 2
+   - Cloudwatch => 2
+   - S3 => 4
 6. Unit Testing => 3
 7. Kanban boards => 4
