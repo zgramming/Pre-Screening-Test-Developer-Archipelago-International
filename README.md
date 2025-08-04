@@ -135,7 +135,7 @@ delay(3000).then((val) => alert("runs after 3 seconds"));
 async function fetchData(url) {
   return new Promise((resolve, reject) => {
     if (url) {
-      return resolve(Data from ${url});
+      return resolve(`Data from ${url}`);
     }
 
     throw reject("URL is required");
@@ -145,9 +145,9 @@ async function fetchData(url) {
 async function execute() {
   try {
     const data = await fetchData("https://example.com");
-    console.log(Processed Data: ${data});
+    console.log(`Processed Data: ${data}`);
   } catch (e) {
-    console.log(Process Error: ${e});
+    console.log(`Process Error: ${e}`);
   }
 }
 
