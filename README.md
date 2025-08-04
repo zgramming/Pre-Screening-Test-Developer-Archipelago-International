@@ -108,7 +108,7 @@ const countWord = (value) => {
 for (const [k, v] of countWord(
   "Four One two two three Three three four  four   four"
 )) {
-  console.log(${k} => ${v});
+  console.log(`${k} => ${v}`);
 }
 ```
 
